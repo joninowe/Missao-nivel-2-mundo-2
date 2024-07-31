@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Receitas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body onload="preencheCatalogo()" class="bg-warning">
+    <main class="container-fluid">
+        <div id="pnlCatalogo" class="d-flex flex-wrap justify-content-center">
+        </div>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script>
+    var receita =[
+        {
+            titulo:"Enroladinho de Hot Dog Cremoso",
+            imagem: src="../midias/enrolado.jpeg",
+            preparo:"Sobre cada pão tortilha 2 fatias de queijo e 1 Salsicha Hot Dog e enrole. disponha os rolinhos em uma travessa e leve ao forno, pré-aquecido à 180°C por 10 minutos.",
+            ingredientes:['3 pães tortilha tradicional', '3 salsicha hot dog', '6 fatias de queijo prato']
+        },
+
+        {
+            titulo:"Pipoca com Bacon Crocante",
+            imagem: src="../midias/pipoca.jpeg",
+            preparo:"Estoure a pipoca no microondas, coloque em uma tigela grande, junte o bacon e finalize com a Maionese.",
+            ingredientes:['Bacon frito em cubos', '1 saco de pipoca para microondas','4 colheres de sopa de Maionese']
+        },
+
+        {
+            titulo: "Quesadilla Mista Cremosa",
+            imagem :  src="../midias/quesadilha.jpeg",
+            preparo : "Junte a Maionese, tomate cortado, fatias de presunto e queijo. eve para frigideira, deixe aproximadamente 5 minutos de cada lado em fogo baixo.",
+            ingredientes: ['2 pães tortilha', '1 tomate médio', '2 fatias de queijo prato', '2 fatias de presunto']
+        },
+
+    ]
+
+    var getListaIngredientes = (ingredientes) => {
+        var abertura = '<ul>';
+            var lista = '';
+            var conteudoLista = ingredientes.map((ingrediente) => {
+                lista += '<li>' + ingrediente + '</li>';
+            });
+            var fechamento = '</ul>';
+            var listaCompleta = abertura + lista + fechamento;
+            return listaCompleta;
+        }
+        
+        var getCard = (receita) => {
+            receita.map((item) => {
+                var temp = item;
+                var cartao = document.getElementById('pnlCatalogo').innerHTML;
+                cartao +=
+                `<div class="card m-5"style="width:250px; display:inline-block">
+                    <img src=${temp.imagem} class="card-img-top">
+
+                    <div class="card-body">
+                        <h5 id="titulo"class="card-title">${temp.titulo}</h5>
+                        ${getListaIngredientes(temp.ingredientes)}<hr>
+
+                        <p class="card-text">${temp.preparo}</p>
+                        </div>
+                        </div>
+                        `;
+                        document.getElementById('pnlCatalogo').innerHTML = cartao;
+                    });
+                }
+                var preencheCatalogo = ()=>{
+                    getCard(receita)
+                }
+                </script>
+                </body>
+                </html>
