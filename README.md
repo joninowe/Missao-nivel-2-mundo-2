@@ -22,7 +22,7 @@
 
 <h2> 1º Procedimento | Ordenando com Java Script e DOM </h2>
   <a href="https://github.com/joninowe/Missao-nivel-2-mundo-2/blob/main/Screenshot_2.jpg">
-      <img src="hhttps://github.com/joninowe/Missao-nivel-2-mundo-2/blob/main/Screenshot_2.jpg" width="540" height="360">
+      <img src="https://github.com/joninowe/Missao-nivel-2-mundo-2/blob/main/Screenshot_2.jpg" width="540" height="360">
   </a>
   
 <h2> 2º Procedimento | Página de Receitas Dinâmica </h2>
